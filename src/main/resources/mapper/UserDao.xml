@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lnb.mall.dao.UserDao">
+    <select id="selectUserByName" resultType="com.lnb.mall.model.entity.User">
+        select user_id as id,name,password,email,phone_number,identity from user where name=#{name}
+    </select>
+
+    <insert id="insertUser">
+        insert into user(name,password,email,identity,phone_number)
+        values(#{name},#{password},#{email},#{identity},#{phoneNumber})
+    </insert>
+</mapper>
