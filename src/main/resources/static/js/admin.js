@@ -50,11 +50,14 @@ function mouseOutOrderAdmin() {
 function searchUserByName() {
   var userName = document.getElementById("username_input").value;
   const xhr = new XMLHttpRequest();
-  xhttp.onload = function() {
+  xhr.responseType = "json";
+  xhr.onload = function() {
+  		var user = xhr.response;
+  		alert(user.name);
 
 
-  }
-  xhr.open("POST", "localhost:8080/lnb/admin/user/searchbyname?username=" + userName)
+  };
+  xhr.open("POST", "localhost:8080/lnb/admin/user/searchbyname/" + userName)
   xhr.send();
 
 }
