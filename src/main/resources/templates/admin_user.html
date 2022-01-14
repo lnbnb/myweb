@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="E:/codehome/ideaprojests/mall/src/main/resources/static/css/admin.css">
+  <script src="E:/codehome/ideaprojests/mall/src/main/resources/static/js/admin.js"></script>
+  <title>admin</title>
+</head>
+
+<body>
+  <div class="app">
+    <div class="left_navbar">
+      <div class="lable_container">
+        <ul>
+          <li class="navbar_lable" id="userlable" onclick="getAdminUser()" onmouseover="mouseOverUserAdmin()" onmouseout="mouseOutUserAdmin()">
+            <span class="word">用户管理</span>
+          </li>
+          <li class="navbar_lable" id="catagorylable" onclick="getAdminCatagory()" onmouseover="mouseOverCatagoryAdmin()" onmouseout="mouseOutCatagoryAdmin()">
+            <span class="word">商品管理</span>
+          </li>
+          <li class="navbar_lable" id="orderlable" onclick="getAdminOrder()" onmouseover="mouseOverOrderAdmin()" onmouseout="mouseOutOrderAdmin()">
+            <span class="word">订单管理</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main" id="main_body">
+      <div id="main_top"></div>
+      <div id="main_container">
+        <div id="user_action_containner">
+          <div id="user_search">
+            <input class="text_input" type="text" name="username" id="username_input"></input>
+            <button class="button" id="username_search_button" onclick="searchUserByName()">搜索</button>
+          </div>
+          <div id="user_add">
+            <button class="button" id="add_user_button">新增用户</button>
+          </div>
+        </div>
+        <div id="user_list">
+          <table class="content_table" id="user_table">
+            <tr class="table_title">
+              <td class="user_list_id">序号</td>
+              <td class="user_list_name">姓名</td>
+              <td class="user_list_identity">权限</td>
+              <td class="user_list_telenum">电话</td>
+              <td class="user_list_mailaddress">邮箱</td>
+              <td class="user_list_lastin">上次登陆时间</td>
+              <td class="user_list_action">操作</td>
+            </tr>
+            <tr class="table_line">
+              <td class="user_list_id">1</td>
+              <td class="user_list_name">周成昊</td>
+              <td class="user_list_identity">管理员</td>
+              <td class="user_list_telenum">18912543048</td>
+              <td class="user_list_mailaddress">2748768269@qq.com</td>
+              <td class="user_list_lastin">2022-1-13</td>
+              <td class="user_list_action">修改/删除</td>
+            </tr>
+          </table>
+        </div>
+        <div id="user_pages"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

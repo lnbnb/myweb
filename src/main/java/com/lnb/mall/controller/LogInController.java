@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 
 @Controller
-public class UserController {
+public class LogInController {
     @Resource
     private UserServiceImpl userServiceImpl;
 

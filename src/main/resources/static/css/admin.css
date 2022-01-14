@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input.text_input {
+	box-sizing: border-box;
+}
+
+/*-------------------------------------------------侧边栏样式-----------------------------------------*/
+.left_navbar {
+  height: 100%;
+  width: 170px;
+  position: fixed;
+  background-color: #303030FF;
+
+}
+
+.lable_container {
+  margin-top: 40px;
+
+}
+
+.lable_container li {
+  height: 50px;
+  text-align: center;
+}
+
+.lable_container li span.word {
+  line-height: 50px;
+  font-size: 15px;
+  color: #E0E0E0FF;
+}
+
+/*-----------------------------------------------主体框架样式------------------------------------------*/
+#main_body {
+  margin-left: 170px;
+}
+
+#main_top {
+  height: 60px;
+  background-color: #FF0000FF;
+}
+
+#main_container {
+  height: 900px;
+  /*background-color: #FF7FEDFF*/
+}
+
+#user_action_containner {
+  height: 80px;
+  background-color: #0026FFFF;
+}
+
+#user_list {
+  height: 800px;
+  padding-top: 30px;
+  padding-right: 40px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+  /*background-color: #00FF21FF*/
+}
+
+#user_pages {
+  height: 100px;
+  background-color: #0026FFFF;
+}
+
+
+/*----------------------------------------------------------------------------------------------
+---------------------------------------------------用户管理界面-----------------------------------
+----------------------------------------------------------------------------------------------
+*/
+
+/*--------------------------------------------------搜索栏样式-----------------------------*/
+
+#user_search {
+	height: 80px;
+	width: 500px;
+	margin-left: 200px;
+	display: inline;
+	float: left;
+}
+
+#user_add {
+	height: 80px;
+	width: 30px;
+	display: inline;
+	float: left;
+}
+
+#username_input {
+	height: 36px;
+	margin-top: 22px;
+	border-width: 0px;
+	font-size: 24px;
+	width: 250px;
+}
+
+#username_search_button {
+	height: 36px;
+	margin-top: 22px;
+	width: 100px;
+	font-size: 20px;
+	margin-left: 50px;
+}
+
+#add_user_button {
+	height: 36px;
+	margin-top: 22px;
+	width: 100px;
+	font-size: 20px;
+	margin-left: 200px;
+}
+
+/*-------------------------------------------------user表单样式-------------------------------*/
+.content_table {
+	width: 100%;
+}
+
+.table_title{
+	height: 70px;
+	vertical-align: center;
+	text-align: center
+}
+
+.table_line{
+	width: 100%;
+	height: 55px;
+	vertical-align: center;
+	text-align: center
+}
+
+.user_list_id {
+  width:5%;
+}
+
+.user_list_name {
+  width:10%;
+}
+
+.user_list_identity {
+  width:10%;
+}
+
+.user_list_telenum {
+  width:20%;
+}
+
+.user_list_mailaddress {
+  width:20%;
+}
+
+.user_list_lastin {
+  width:20%;
+}
+
+.user_list_action {
+  width:15%;
+}
