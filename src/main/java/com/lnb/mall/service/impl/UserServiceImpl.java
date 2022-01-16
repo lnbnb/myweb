@@ -6,6 +6,7 @@ import com.lnb.mall.service.intf.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -21,5 +22,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public User queryUserByName(String name) {
         return userDao.selectUserByName(name);
+    }
+
+    @Override
+    public List<User> findAllUsers() {
+        return userDao.findAllUsers();
     }
 }

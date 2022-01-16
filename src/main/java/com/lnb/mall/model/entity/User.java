@@ -16,7 +16,7 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

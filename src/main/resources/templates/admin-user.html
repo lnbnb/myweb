@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="static/css/admin.css">
-  <script src="static/js/admin.js"></script>
+  <link rel="stylesheet" type="text/css" th:href="@{/static/css/user.css}" href="E:/codehome/ideaprojests/mall/src/main/resources/static/css/user.css">
+  <script th:src="/lnb/static/js/user.js" src="E:/codehome/ideaprojests/mall/src/main/resources/static/js/user.js"></script>
   <title>admin</title>
 </head>
 
@@ -26,7 +26,7 @@
         </ul>
       </div>
     </div>
-    <!-- <div class="main" id="main_body"> -->
+    <div class="main" id="main_body">
       <div id="main_top"></div>
       <div id="main_container">
         <div id="user_action_containner">
@@ -49,13 +49,13 @@
               <td class="user_list_lastin">上次登陆时间</td>
               <td class="user_list_action">操作</td>
             </tr>
-            <tr class="table_line">
-              <td class="user_list_id">1</td>
-              <td class="user_list_name">周成昊</td>
-              <td class="user_list_identity">管理员</td>
-              <td class="user_list_telenum">18912543048</td>
-              <td class="user_list_mailaddress">2748768269@qq.com</td>
-              <td class="user_list_lastin">2022-1-13</td>
+            <tr class="table_line" th:each="user:${users}">
+              <td th:text="nimasile" class="user_list_id">1</td>
+              <td th:text="${user.name}" class="user_list_name">周成昊</td>
+              <td th:text="${user.name}" class="user_list_identity">管理员</td>
+              <td th:text="${user.name}" class="user_list_telenum">18912543048</td>
+              <td th:text="${user.name}" class="user_list_mailaddress">2748768269@qq.com</td>
+              <td th:text="${user.name}" class="user_list_lastin">2022-1-13</td>
               <td class="user_list_action">修改/删除</td>
             </tr>
           </table>

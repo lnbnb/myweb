@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" />
+	<link rel="stylesheet" type="text/css" href="#" th:href="@{/bg/my.css}" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+ 
+	<title>考勤管理系统</title>
+	<!-- Bootstrap core CSS -->
+	<link href="asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.css}" rel="stylesheet" />
+`
+	<!-- Custom styles for this template -->
+	<link href="asserts/css/dashboard.css" th:href="@{/asserts/css/dashboard.css}" rel="stylesheet" />
+	<style type="text/css">
+		/* Chart.js */
+ 
+		@-webkit-keyframes chartjs-render-animation {
+			from {
+				opacity: 0.99
+			}
+			to {
+				opacity: 1
+			}
+		}
+ 
+		@keyframes chartjs-render-animation {
+			from {
+				opacity: 0.99
+			}
+			to {
+				opacity: 1
+			}
+		}
+ 
+		.chartjs-render-monitor {
+			-webkit-animation: chartjs-render-animation 0.001s;
+			animation: chartjs-render-animation 0.001s;
+		}
+	</style>
+</head>
+ 
+<body>
+ 
+<div class="container-fluid">
+	<div class="row">
+		<!-- 引入sidebar -->
+		<div th:replace="commons/bar::#sidebar(activeUri='super')"></div>
+ 
+		<main class="main ui container">
+ 
+			<div class="ui grid">
+				<div class="one wide column"></div>
+				<div class="fifteen wide column">
+					<form th:action="@{/admin/add}" method="post">
+						<input type="hidden" name="_method" value="put" th:if="${people!=null}"/>
+						<input type="hidden" name="id" th:if="${people!=null}" th:value="${people.id}"/>
+						<div class="form-group">
+							<label>用户名</label>
+							<input name="account" type="text" class="form-control" placeholder="root"
+								   th:value="${people!=null}?${people.id}" th:readonly="${people!=null} ? 'true':'false'" />
+						</div>
+						<div class="form-group">
+							<label>密码</label>
+							<input name="password" type="password" class="form-control" placeholder="123456"
+								   th:value="${people!=null}?${people.pwd}" />
+						</div>
+						<div class="form-group">
+							<label>是否激活</label><br/>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="active" value="1"
+									   th:checked="${people!=null}?${people.active==1}" />
+								<label class="form-check-label">是</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="active" value="0"
+									   th:checked="${people!=null}?${people.active==0}" />
+								<label class="form-check-label">否</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label th:style="${people==null} ? 'display: none' : ''">修改时间</label>
+							<input th:type="${people!=null} ? 'text' : 'hidden'" class="form-control" placeholder="2020/3/12 "
+								   th:value="${people!=null}?${#dates.format(people.modifyTime, 'yyyy-MM-dd hh:mm:ss')}" readonly="readonly" />
+						</div>
+						<div class="form-group">
+							<label th:style="${people==null} ? 'display: none' : ''">创建时间</label>
+							<input th:type="${people!=null} ? 'text' : 'hidden'"  class="form-control" placeholder="2020/3/12"
+								   th:value="${people!=null}?${#dates.format(people.createTime, 'yyyy-MM-dd hh:mm:ss')}" readonly="readonly" />
+						</div>
+						<button type="submit" class="btn btn-primary" th:text="${people!=null}?'修改':'添加'">添加</button>
+						<p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+					</form>
+				</div>
+			</div>
+ 
+		</main>
+ 
+	</div>
+</div>
+ 
+<script type="text/javascript" src="asserts/js/jquery-3.2.1.slim.min.js" th:src="@{/webjars/jquery/3.3.1/jquery.js}"></script>
+<script type="text/javascript" src="asserts/js/popper.min.js" th:src="@{/webjars/popper.js/1.11.1/dist/popper.js}"></script>
+<script type="text/javascript" src="asserts/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/4.0.0/js/bootstrap.js}"></script>
+ 
+<script type="text/javascript" src="#" th:src="@{/webjars/jquery/3.3.1/jquery.js}"></script>
+ 
+ 
+</body>
+ 
+</html>

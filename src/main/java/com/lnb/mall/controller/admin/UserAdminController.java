@@ -3,12 +3,11 @@ package com.lnb.mall.controller.admin;
 import com.lnb.mall.model.entity.User;
 import com.lnb.mall.service.impl.UserServiceImpl;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Controller
 public class UserAdminController {
@@ -16,8 +15,12 @@ public class UserAdminController {
     private UserServiceImpl userServiceImpl;
 
     @RequestMapping("/admin/user")
-    public String userAdmin(){
-        return "admin-user";
+    public ModelAndView userAdmin(){
+        List<User> users = userServiceImpl.findAllUsers();
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("users",users);
+        modelAndView.setViewName("admin-user");
+        return modelAndView;
     }
 
     @PostMapping("/admin/user/searchbyname/{userName}")

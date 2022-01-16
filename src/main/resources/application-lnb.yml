@@ -12,7 +12,7 @@ spring:
     password: 88@2018zch
     driver-class-name: com.mysql.cj.jdbc.Driver
   thymeleaf:
-    prefix: classpath:/templates/
+    prefix: [classpath:/templates/
     suffix: .html
 
 mybatis:
